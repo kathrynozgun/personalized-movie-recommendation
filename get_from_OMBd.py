@@ -48,8 +48,8 @@ def get_from_OMBd(api_key, title):
     except:
         js = None
     
-    if not js or 'status' not in js or js['status']!='OK':
-        print('Failed to Retrieve')
+    #if not js or 'status' not in js or js['status']!='OK':
+        #print('')
         #print(data)
     
     return js
