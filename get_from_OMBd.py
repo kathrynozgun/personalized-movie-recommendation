@@ -32,15 +32,15 @@ def get_from_OMBd(api_key, title):
      
     parms = dict()
     if api_key is not False: parms['apikey'] = api_key
-    parms['t'] = title
+    parms['i'] = title
     url = serviceurl + urllib.parse.urlencode(parms)
     
     
-    print('Retrieving ', url)
+    #print('Retrieving ', url)
     
     uh = urllib.request.urlopen(url, context=ctx)
     data = uh.read().decode()
-    print('Retrieved ', len(data), ' characters')
+    #print('Retrieved ', len(data), ' characters')
     
     
     try:
@@ -50,7 +50,7 @@ def get_from_OMBd(api_key, title):
     
     if not js or 'status' not in js or js['status']!='OK':
         print('Failed to Retrieve')
-        print(data)
+        #print(data)
     
     return js
     
