@@ -16,7 +16,7 @@ import time
 
 
 # reads excel into the dataframe
-movie_ratings = pd.read_csv('Top-1000-Movies-List-2.csv')
+movie_ratings = pd.read_csv('Top-1000-Movies-List-032021.csv')
 print( movie_ratings.columns)
 
 top1000 = movie_ratings[:1001]  # keep the first 1000 rows
@@ -54,19 +54,6 @@ movie_details_df.head()
 
 
 movie_details_df.to_pickle("./movie_details.pkl")
-
-
-
-# merge together the csv table with manual input from viewers
-# AND the OMDb requested table with movie details
-
-big_movie_details_df = pd.merge(top1000,movie_details_df,left_on='ttcode',right_on='imdbID')
-
-print(big_movie_details_df.shape)
-big_movie_details_df.head()
-
-
-
 
 
 
